@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base:BaseContentPage x:TypeArguments="vm:MainViewModel" 
+                      xmlns:base="clr-namespace:ListViewHulk.Views;assembly=ListViewHulk" 
+                      xmlns:vm="clr-namespace:ListViewHulk.ViewModels;assembly=ListViewHulk" 
+                      xmlns:helpers="clr-namespace:ListViewHulk.Helpers;assembly=ListViewHulk" 
+                      xmlns="http://xamarin.com/schemas/2014/forms" 
+                      xmlns:local="clr-namespace:ListViewHulk;assembly=ListViewHulk" 
+                      xmlns:renderer="clr-namespace:ListViewHulk.Renderers;assembly=ListViewHulk" 
+                      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+                      x:Class="ListViewHulk.Views.MainPage">
+    
+    <StackLayout Margin="20,35,20,20">
+        <Label Text="{Binding Test}" />
+        <ListView ItemsSource="{Binding Monkeys}" HasUnevenRows="true" ItemSelected="OnListViewItemSelected" ItemTapped="OnListViewItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.RowSpan="2" Source="{Binding ImageUrl}" Aspect="AspectFill" HeightRequest="60" WidthRequest="60" />
+                            <renderer:MyLabel Grid.Column="1" Text="{Binding Name}" FontAttributes="Bold" />
+                            <Label Grid.Row="1" Grid.Column="1" Text="{Binding Location}" VerticalOptions="End" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</base:BaseContentPage>

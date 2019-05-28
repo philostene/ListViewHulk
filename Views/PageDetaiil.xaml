@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base:BaseContentPage x:TypeArguments="vm:PageDetailViewModel" 
+                      xmlns:base="clr-namespace:ListViewHulk.Views;assembly=ListViewHulk" 
+                      xmlns:vm="clr-namespace:ListViewHulk.ViewModels;assembly=ListViewHulk" 
+                      xmlns:helpers="clr-namespace:ListViewHulk.Helpers;assembly=ListViewHulk" 
+                      xmlns="http://xamarin.com/schemas/2014/forms" 
+                      xmlns:renderer="clr-namespace:ListViewHulk.Renderers;assembly=ListViewHulk" 
+                      xmlns:local="clr-namespace:ListViewHulk;assembly=ListViewHulk" 
+                      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+                      x:Class="ListViewHulk.Views.PageDetail">
+    
+    <StackLayout Margin="20,35,20,20">
+        <Label Text="{Binding Test}" />
+          
+        
+         <StackLayout Margin="20,35,20,20">
+                     <Image Grid.RowSpan="2" Source="{Binding ImageUrl}" Aspect="AspectFill" HeightRequest="250" WidthRequest="60" />
+                            <renderer:MyLabel Grid.Column="1" Text="{Binding Name}" FontAttributes="Bold" />
+                            <Label Grid.Row="1" Grid.Column="1" Text="{Binding Location}" VerticalOptions="End" /> 
+          </StackLayout>                  
+    </StackLayout>
+</base:BaseContentPage>
