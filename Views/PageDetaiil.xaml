@@ -13,10 +13,10 @@
         <Label Text="{Binding Test}" />
           
         
-         <StackLayout Margin="20,35,20,20">
-                     <Image Grid.RowSpan="2" Source="{Binding ImageUrl}" Aspect="AspectFill" HeightRequest="250" WidthRequest="60" />
-                            <renderer:MyLabel Grid.Column="1" Text="{Binding Name}" FontAttributes="Bold" />
-                            <Label Grid.Row="1" Grid.Column="1" Text="{Binding Location}" VerticalOptions="End" /> 
-          </StackLayout>                  
+         <StackLayout Margin="20,35,20,20" >
+                     <Image Grid.RowSpan="2" Source="{Binding monkey.ImageUrl}" Aspect="AspectFill" HeightRequest="300" WidthRequest="60" />
+                     <renderer:MyLabel Grid.Column="1" Text="{Binding monkey.Name}" FontAttributes="Bold" />
+                     <Label Grid.Row="1" Grid.Column="1" Text="{Binding monkey.Location}" VerticalOptions="End" /> 
+         </StackLayout>                  
     </StackLayout>
 </base:BaseContentPage>

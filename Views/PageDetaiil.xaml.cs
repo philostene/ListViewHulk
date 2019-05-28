@@ -23,13 +23,17 @@ namespace ListViewHulk.Views
 
         public PageDetail(Monkey monk)
         {
-            //  _monkey = new Monkey();
-
-
             _monkey = monk;
+            // ViewModel.monkey = _monkey;
             InitializeComponent();
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            ViewModel.monkey = _monkey;
+
+        }
     }
 
 }

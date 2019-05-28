@@ -11,7 +11,7 @@ namespace ListViewHulk.ViewModels
 {
     public class PageDetailViewModel : BaseViewModel
     {
-        private Monkey _monkey;
+        private Monkey _monkey = new Monkey();
 
         public Monkey monkey
         {
@@ -19,10 +19,11 @@ namespace ListViewHulk.ViewModels
             {
                 return _monkey;
             }
-            set
-            {
-                this._monkey = value;
-            }
+            set => Set(ref _monkey, value);
+            //{
+            //    this._monkey = value;
+            //    RaisePropertyChanged("monkey");
+            //}
         }
 
         private string test;
@@ -40,6 +41,7 @@ namespace ListViewHulk.ViewModels
                                 IErrorHandler errorHandler) : base(dialogService, errorHandler)
         {
             test = "titi";
+
         }
 
         protected override async Task StartAsync(CancellationToken ct)
@@ -47,9 +49,5 @@ namespace ListViewHulk.ViewModels
 
         }
 
-        public void MainPageTransfertValue(Monkey monk)
-        {
-            _monkey = monk;
-        }
     }
 }

@@ -27,6 +27,8 @@ namespace ListViewHulk.ViewModels
 
         public string Test { get; set; }
 
+
+
         public MainViewModel(IDialogService dialogService,
                                 IErrorHandler errorHandler) : base(dialogService, errorHandler)
         {
